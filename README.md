@@ -18,6 +18,19 @@ Before running this application, make sure you have the following installed:
 - **Node.js** (version 14 or higher)
 - **npm** or **yarn** package manager
 
+### Node.js Compatibility Issue
+
+If you're using Node.js 17+ and encounter the error `ERR_OSSL_EVP_UNSUPPORTED`, this is due to OpenSSL 3.0 changes that removed support for legacy cryptographic functions used by the older webpack version in react-scripts 4.0.3.
+
+**Solutions:**
+1. **Use legacy OpenSSL provider** (recommended for this project):
+   ```bash
+   NODE_OPTIONS="--openssl-legacy-provider" npm start
+   ```
+
+2. **Use Node.js 16 or earlier** (alternative solution):
+   - Install Node.js 16.x using nvm or your preferred Node version manager
+
 ## Getting Started
 
 ### 1. Clone the repository
@@ -41,6 +54,12 @@ yarn install
 
 ### 3. Start the development server
 
+**If using Node.js 17+ (recommended approach):**
+```bash
+NODE_OPTIONS="--openssl-legacy-provider" npm start
+```
+
+**If using Node.js 16 or earlier:**
 Using npm:
 ```bash
 npm start
