@@ -2,6 +2,8 @@
 
 A React application that displays and sorts articles by "Most Upvoted" or "Most Recent" criteria.
 
+> Please refer to the problem statement on this URL: https://www.hackerrank.com/challenges/react-article-sorting/problem
+
 ## Features
 
 - Display articles in a table format with title, upvotes, and date
